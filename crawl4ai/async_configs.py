@@ -691,6 +691,7 @@ class CrawlerRunConfig():
         adjust_viewport_to_content: bool = False,
         # Media Handling Parameters
         screenshot: bool = False,
+        screenshot_naive: bool = False,
         screenshot_wait_for: float = None,
         screenshot_height_threshold: int = SCREENSHOT_HEIGHT_TRESHOLD,
         pdf: bool = False,
@@ -775,6 +776,7 @@ class CrawlerRunConfig():
 
         # Media Handling Parameters
         self.screenshot = screenshot
+        self.screenshot_naive = screenshot_naive
         self.screenshot_wait_for = screenshot_wait_for
         self.screenshot_height_threshold = screenshot_height_threshold
         self.pdf = pdf
@@ -899,6 +901,7 @@ class CrawlerRunConfig():
             adjust_viewport_to_content=kwargs.get("adjust_viewport_to_content", False),
             # Media Handling Parameters
             screenshot=kwargs.get("screenshot", False),
+            screenshot_naive=kwargs.get("screenshot_naive", False),
             screenshot_wait_for=kwargs.get("screenshot_wait_for"),
             screenshot_height_threshold=kwargs.get(
                 "screenshot_height_threshold", SCREENSHOT_HEIGHT_TRESHOLD
@@ -994,6 +997,7 @@ class CrawlerRunConfig():
             "magic": self.magic,
             "adjust_viewport_to_content": self.adjust_viewport_to_content,
             "screenshot": self.screenshot,
+            "screenshot_naive": self.screenshot_naive,
             "screenshot_wait_for": self.screenshot_wait_for,
             "screenshot_height_threshold": self.screenshot_height_threshold,
             "pdf": self.pdf,

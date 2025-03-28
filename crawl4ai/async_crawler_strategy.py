@@ -1040,6 +1040,11 @@ class AsyncPlaywrightCrawlerStrategy(AsyncCrawlerStrategy):
         Returns:
             str: The base64-encoded screenshot data
         """
+        screenshot_naive = kwargs.get("screenshot_naive", False)
+
+        if screenshot_naive:
+            return await self.take_screenshot_naive(page)
+
         need_scroll = await self.page_need_scroll(page)
 
         if not need_scroll:
